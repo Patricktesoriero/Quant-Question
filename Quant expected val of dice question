@@ -1,0 +1,15 @@
+# You roll a fair six-sided and sum the outcomes until you reach a multiple of 6. What is the expected number of times you expect to roll the die.
+import math
+import random
+sim_number = 1
+list = []
+while sim_number <= 999999:
+    num = random.randint(1,6)
+    count = 1
+    while (num % 6) != 0:
+        num = num + random.randint(1,6)
+        count += 1
+    list.append(count)
+    sim_number += 1
+expected_val = sum(list) / len(list)
+print(f"Expected Value: {expected_val:.2f}")
