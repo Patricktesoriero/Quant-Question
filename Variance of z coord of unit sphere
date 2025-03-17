@@ -1,0 +1,16 @@
+# Randomly chose a coordinate (x, y, z) on the unit sphere‌‌‌‌‍‌‌‍‌‌‍‌‍‍‌‍‍‌‌. What is the variance of the z-coordinate?
+import math
+import random
+list = []
+sims = 1
+while sims <= 100000:
+    phi = random.uniform(0, math.pi)
+    theta = random.uniform(0, 2 * math.pi)
+    x = math.sin(phi) * math.cos(theta)
+    y = math.sin(phi) * math.sin(theta)
+    z = math.cos(phi)
+    z = z ** 2
+    list.append(z)
+    sims += 1
+avg = sum(list) / len(list)
+print(f"{avg:.2f}")
